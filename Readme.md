@@ -1,9 +1,3 @@
-# NativeBase TypeScript Expo Template
+# expo-app-typescript-starter
 
-The official NativeBase TypeScript template for [Expo](https://docs.expo.io/)
-
-## Usage
-
-```sh
-expo init my-app --template @native-base/expo-template-typescript
-```
+A universal app starter based on Expo + React Native + Typescript + Native base UI.
