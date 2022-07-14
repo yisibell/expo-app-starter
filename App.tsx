@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Text,
   Link,
@@ -11,19 +11,19 @@ import {
   extendTheme,
   VStack,
   Box,
-} from 'native-base';
-import NativeBaseIcon from './components/NativeBaseIcon';
+} from 'native-base'
+import NativeBaseIcon from './components/NativeBaseIcon'
 
 // Define the config
 const config = {
   useSystemColorMode: false,
   initialColorMode: 'dark',
-};
+}
 
 // extend the theme
-export const theme = extendTheme({ config });
+export const theme = extendTheme({ config })
 
-type MyThemeType = typeof theme;
+type MyThemeType = typeof theme
 
 declare module 'native-base' {
   interface ICustomTheme extends MyThemeType {}
@@ -68,12 +68,12 @@ export default function App() {
         </VStack>
       </Center>
     </NativeBaseProvider>
-  );
+  )
 }
 
 // Color Switch Component
 function ToggleDarkMode() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <HStack space={2} alignItems="center">
       <Text>Dark</Text>
@@ -86,5 +86,5 @@ function ToggleDarkMode() {
       />
       <Text>Light</Text>
     </HStack>
-  );
+  )
 }
