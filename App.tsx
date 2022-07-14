@@ -7,7 +7,7 @@ import Navigator from '@src/navigation/navigator'
 // Define the config
 const config = {
   useSystemColorMode: false,
-  initialColorMode: 'dark', // light, dark
+  initialColorMode: 'light', // light, dark
 }
 
 // extend the theme
@@ -21,7 +21,7 @@ declare module 'native-base' {
 
 export default function App() {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={theme}>
       <Navigator />
     </NativeBaseProvider>
   )
