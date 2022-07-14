@@ -1,7 +1,8 @@
 import React from 'react'
 import { NativeBaseProvider, extendTheme } from 'native-base'
 
-import ColorModeDemo from '@src/pages/color-mode-demo'
+// 路由导航器
+import Navigator from '@src/navigation/navigator'
 
 // Define the config
 const config = {
@@ -21,7 +22,7 @@ declare module 'native-base' {
 export default function App() {
   return (
     <NativeBaseProvider>
-      <ColorModeDemo />
+      <Navigator />
     </NativeBaseProvider>
   )
 }
