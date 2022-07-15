@@ -1,3 +1,3 @@
 # store
 
-状态管理。
+your state management built here.

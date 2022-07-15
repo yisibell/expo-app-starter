@@ -2,11 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export type SiteState = {
+  // jwt token
   accessToken: string
+  // 是否已登录
+  isSignedIn: boolean
 }
 
 const initialState: SiteState = {
   accessToken: '',
+  isSignedIn: false,
 }
 
 export const siteSlice = createSlice({
@@ -17,10 +21,13 @@ export const siteSlice = createSlice({
     setAccessToken: (state, action: PayloadAction<string>) => {
       state.accessToken = action.payload
     },
+    setIsSignedIn(state, action: PayloadAction<boolean>) {
+      state.isSignedIn = action.payload
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setAccessToken } = siteSlice.actions
+export const { setAccessToken, setIsSignedIn } = siteSlice.actions
 
 export default siteSlice.reducer

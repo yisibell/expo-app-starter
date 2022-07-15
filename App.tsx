@@ -4,6 +4,7 @@ import { NativeBaseProvider, extendTheme } from 'native-base'
 // Store
 import { Provider as StoreProvider } from 'react-redux'
 import store from '@src/store'
+import persistor, { PersistorGate } from '@src/store/persistor'
 
 // Navigation
 import Navigator from '@src/navigation/navigator'
@@ -26,9 +27,11 @@ declare module 'native-base' {
 export default function App() {
   return (
     <StoreProvider store={store}>
-      <NativeBaseProvider theme={theme}>
-        <Navigator />
-      </NativeBaseProvider>
+      <PersistorGate persistor={persistor}>
+        <NativeBaseProvider theme={theme}>
+          <Navigator />
+        </NativeBaseProvider>
+      </PersistorGate>
     </StoreProvider>
   )
 }

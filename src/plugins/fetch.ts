@@ -2,6 +2,8 @@ import qs from 'qs'
 import axios from 'axios'
 import type { ICreateRequestApi } from '@src/types/apiRepository'
 import getConstants from './getConstants'
+import store from '@src/store'
+import { setIsSignedIn } from '@src/store/features/site/reducer'
 
 const assign = (obj: {}, def: {}) => {
   return Object.assign({}, obj, def)
@@ -19,8 +21,10 @@ const createAxiosInstance = () => {
   axiosInstance.interceptors.request.use(
     (config) => {
       // set JWT token
+      const state = store.getState()
+
       axiosInstance.defaults.headers.common.Authorization =
-        'your jwt accessToken'
+        state.site.accessToken || ''
 
       return config
     },
@@ -34,17 +38,10 @@ const createAxiosInstance = () => {
   // 响应拦截
   axiosInstance.interceptors.response.use(
     (resp) => {
-      const { code, data } = resp.data
+      const { code } = resp.data
 
       if (![200, 201, 0].includes(code)) {
-        // 重定向处理
-        if ([301, 302].includes(code)) {
-          const { location } = data
-
-          console.log(location)
-        } else {
-          console.error('[Response Error Data]:', resp)
-        }
+        console.error('[Response Error Data]:', resp)
       }
 
       return resp.data
@@ -56,8 +53,8 @@ const createAxiosInstance = () => {
       console.error('[HTTP Response Error Info]:', err)
 
       if (code === 401) {
-        // token 失效
-        // redirect('/login')
+        // token 失效, 变更为未登录状态
+        store.dispatch(setIsSignedIn(false))
       }
 
       if (err.isAxiosError) {
