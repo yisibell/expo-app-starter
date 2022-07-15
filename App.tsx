@@ -1,7 +1,11 @@
 import React from 'react'
 import { NativeBaseProvider, extendTheme } from 'native-base'
 
-// 路由导航器
+// Store
+import { Provider as StoreProvider } from 'react-redux'
+import store from '@src/store'
+
+// Navigation
 import Navigator from '@src/navigation/navigator'
 
 // Define the config
@@ -21,8 +25,10 @@ declare module 'native-base' {
 
 export default function App() {
   return (
-    <NativeBaseProvider theme={theme}>
-      <Navigator />
-    </NativeBaseProvider>
+    <StoreProvider store={store}>
+      <NativeBaseProvider theme={theme}>
+        <Navigator />
+      </NativeBaseProvider>
+    </StoreProvider>
   )
 }
