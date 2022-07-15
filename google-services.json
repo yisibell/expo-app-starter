@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "138209891124",
+    "project_id": "expo-app-typescript-starter",
+    "storage_bucket": "expo-app-typescript-starter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138209891124:android:7a7ac2613b89a4448acb61",
+        "android_client_info": {
+          "package_name": "com.elenh.expoapptypescriptstarter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138209891124-shqtsia657ieod001i65358d9etf693h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcWHsLOCcytrLutpADj5Sc-e_00eU4bI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138209891124-shqtsia657ieod001i65358d9etf693h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
