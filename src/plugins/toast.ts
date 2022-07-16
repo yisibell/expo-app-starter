@@ -6,6 +6,7 @@ type IToastExtraProp = Parameters<typeof Toast.show>[0]
 const toast = (title: ReactNode, extra: IToastExtraProp = {}) => {
   return Toast.show({
     title,
+    placement: 'top',
     ...extra,
   })
 }

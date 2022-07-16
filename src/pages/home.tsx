@@ -10,8 +10,7 @@ import getConstants from '@src/plugins/getConstants'
 import { $api } from '@src/api'
 import toast from '@src/plugins/toast'
 
-import { setAccessToken } from '@src/store/features/site/reducer'
-import { useAppSelector, useAppDispatch } from '@src/store'
+import { useAppSelector } from '@src/store'
 
 export default function Home(_props: HomeScreenProps) {
   // 路由功能
@@ -28,22 +27,12 @@ export default function Home(_props: HomeScreenProps) {
 
   // 测试状态管理
   const accessToken = useAppSelector((state) => state.site.accessToken)
-  const dispatch = useAppDispatch()
 
   // 测试接口
   const testApiRepo = async () => {
-    const res = await $api.user.login({
-      username: 'DHSZ',
-      password: '123456',
-    })
+    const res = await $api.user.info()
 
     console.log('api repo test: ', res)
-
-    const { data, code } = res
-
-    if (code === 0) {
-      dispatch(setAccessToken(data.accessToken + new Date()))
-    }
   }
 
   useFocusEffect(() => {

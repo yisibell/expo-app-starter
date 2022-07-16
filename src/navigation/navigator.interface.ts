@@ -1,9 +1,10 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-// 各页面路由参数
+// 页面路由及路由参数
 export type RootStackParamList = {
   Home: undefined
   ColorModeDemo: undefined
+  Login: undefined
 }
 
 // 首页

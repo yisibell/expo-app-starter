@@ -7,7 +7,7 @@ import store from '@src/store'
 import persistor, { PersistorGate } from '@src/store/persistor'
 
 // Navigation
-import Navigator from '@src/navigation/navigator'
+import MainNavigator from '@src/navigation/MainNavigator'
 
 // Define the config
 const config = {
@@ -29,7 +29,7 @@ export default function App() {
     <StoreProvider store={store}>
       <PersistorGate persistor={persistor}>
         <NativeBaseProvider theme={theme}>
-          <Navigator />
+          <MainNavigator />
         </NativeBaseProvider>
       </PersistorGate>
     </StoreProvider>

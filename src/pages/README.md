@@ -1,3 +1,3 @@
 # pages
 
-your page level react native components built here.
+your **page level** react native components built here.
