@@ -9,7 +9,7 @@ module.exports = {
     name: 'expo-app-typescript-starter',
     slug: 'expo-app-typescript-starter',
     description: 'A expo app starter!',
-    owner: 'elenh',
+    owner: 'aidolfe',
     version,
     orientation: 'portrait',
     icon: './assets/icon.png',
