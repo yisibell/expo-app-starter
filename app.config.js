@@ -1,8 +1,8 @@
-const pkg = require('./package.json')
 const getEnvConfig = require('./config')
 
-const { version } = pkg
 const { APP_ENV } = process.env
+
+const version = '1.0.0'
 
 module.exports = {
   expo: {
@@ -24,14 +24,14 @@ module.exports = {
     assetBundlePatterns: ['**/*'],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: 'com.elenh.expoapptypescriptstarter',
+      bundleIdentifier: 'com.aidolfe.expoapptypescriptstarter',
     },
     android: {
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#FFFFFF',
       },
-      package: 'com.elenh.expoapptypescriptstarter',
+      package: 'com.aidolfe.expoapptypescriptstarter',
       googleServicesFile: './google-services.json',
     },
     web: {
