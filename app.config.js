@@ -24,14 +24,14 @@ module.exports = {
     assetBundlePatterns: ['**/*'],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: 'com.aidolfe.expoapptypescriptstarter',
+      bundleIdentifier: 'com.elenh.expoapptypescriptstarter',
     },
     android: {
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#FFFFFF',
       },
-      package: 'com.aidolfe.expoapptypescriptstarter',
+      package: 'com.elenh.expoapptypescriptstarter',
       googleServicesFile: './google-services.json',
     },
     web: {
