@@ -10,6 +10,7 @@ import { $api } from '@src/api'
 import { useAppDispatch } from '@src/store'
 import { setIsSignedIn, setAccessToken } from '@src/store/features/site/reducer'
 import toast from '@src/plugins/toast'
+import { setToken } from '@src/plugins/secureToken'
 
 const Login = () => {
   const dispatch = useAppDispatch()
@@ -43,6 +44,7 @@ const Login = () => {
       if (code === 0) {
         dispatch(setAccessToken(data.accessToken))
         dispatch(setIsSignedIn(true))
+        await setToken(data.accessToken)
       } else {
         toast('用户名或密码不正确!')
       }

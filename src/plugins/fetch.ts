@@ -4,6 +4,7 @@ import type { ICreateRequestApi } from '@src/types/apiRepository'
 import getConstants from './getConstants'
 import store from '@src/store'
 import { setIsSignedIn } from '@src/store/features/site/reducer'
+import { getToken } from '@src/plugins/secureToken'
 
 const assign = (obj: {}, def: {}) => {
   return Object.assign({}, obj, def)
@@ -21,12 +22,23 @@ const createAxiosInstance = () => {
   axiosInstance.interceptors.request.use(
     (config) => {
       // set JWT token
-      const state = store.getState()
+      // const state = store.getState()
 
-      axiosInstance.defaults.headers.common.Authorization =
-        state.site.accessToken || ''
+      // axiosInstance.defaults.headers.common.Authorization =
+      //   state.site.accessToken || ''
 
-      return config
+      // return config
+      // return Promise.resolve(config)
+
+      return new Promise((resolve) => {
+        getToken()
+          .then((value) => {
+            axiosInstance.defaults.headers.common.Authorization = value || ''
+          })
+          .finally(() => {
+            resolve(config)
+          })
+      })
     },
     (err) => {
       console.error('[Request Error]：', err)
