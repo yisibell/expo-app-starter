@@ -42,13 +42,14 @@ const Login = () => {
       const { code, data } = await $api.user.login(params)
 
       if (code === 0) {
+        setLoading(false)
         dispatch(setAccessToken(data.accessToken))
         dispatch(setIsSignedIn(true))
         await setToken(data.accessToken)
       } else {
         toast('用户名或密码不正确!')
       }
-    } finally {
+    } catch (err) {
       setLoading(false)
     }
   }
