@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-app-typescript-starter",
-    "slug": "expo-app-typescript-starter",
+    "name": "expo-app-starter",
+    "slug": "expo-app-starter",
     "description": "A expo app starter!",
     "owner": "aidolfe",
     "version": "1.0.0",
@@ -18,14 +18,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.elenh.expoapptypescriptstarter"
+      "bundleIdentifier": "com.aidolfe.expoappstarter"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.elenh.expoapptypescriptstarter",
+      "package": "com.aidolfe.expoappstarter",
       "googleServicesFile": "./google-services.json"
     },
     "web": {
